@@ -1,0 +1,9 @@
+<h2 *ngIf="error.isError">{{error.message}}</h2>
+<section>
+    <div>
+        <input type="text" placeholder="url" [(ngModel)]="inputUrl">
+        <button (click)="obtenerUrl()">Procesar</button>
+    </div>
+
+    <p *ngIf="shortUrl">{{shortUrl}}</p>
+</section>
