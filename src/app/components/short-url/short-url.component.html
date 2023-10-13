@@ -1,9 +1,10 @@
-<h2 *ngIf="error.isError">{{error.message}}</h2>
-<section>
-    <div>
-        <input type="text" placeholder="url" [(ngModel)]="inputUrl">
+<section class="section-form">
+    <div style="display: flex; gap: 0.5rem;">
+        <input type="text" placeholder="Introduce tu URL" [(ngModel)]="inputUrl">
         <button (click)="obtenerUrl()">Procesar</button>
     </div>
+    <h3 style="color: rgb(154, 15, 15);" *ngIf="error.isError">{{error.message}}</h3>
 
-    <p *ngIf="shortUrl">{{shortUrl}}</p>
 </section>
+<p class="shortUrl" *ngIf="shortUrl">{{shortUrl}} <img (click)="copyShortUrl()"
+        style="margin-left: 0.5rem; cursor: pointer;" [src]="src" alt="copy icon" width="20"></p>

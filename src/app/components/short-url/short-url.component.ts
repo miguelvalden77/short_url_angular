@@ -11,8 +11,19 @@ export class ShortUrlComponent {
   inputUrl: string = ""
   shortUrl: string = ""
   error: any = { isError: false, message: "" }
+  imgCopy: string = "https://cdn-icons-png.flaticon.com/128/126/126498.png"
+  imgCheck: string = "https://cdn-icons-png.flaticon.com/128/157/157977.png"
+  src: string = this.imgCopy
 
   constructor(private shortUrlService: ShortUrlService) { }
+
+  copyShortUrl() {
+    navigator.clipboard.writeText(this.shortUrl)
+    this.src = this.imgCheck
+    setTimeout(() => {
+      this.src = this.imgCopy
+    }, 1500)
+  }
 
   obtenerUrl() {
     if (this.inputUrl == "") {

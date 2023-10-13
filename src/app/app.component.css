@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: rgb(6, 6, 82);
+    color: whitesmoke;
+}
